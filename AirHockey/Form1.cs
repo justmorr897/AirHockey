@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Media;
 
 namespace AirHockey
 {
@@ -89,7 +90,7 @@ namespace AirHockey
         Rectangle player2Net = new Rectangle(200,797,126,42);
         Rectangle player1Net = new Rectangle(200, 0, 127, 37);
 
-        
+        SoundPlayer puckSmack = new SoundPlayer(Properties.Resources._582265__rocketpancake__justa_slap_smack);
 
 
 
@@ -643,6 +644,8 @@ namespace AirHockey
 
             if (player1.IntersectsWith(puck) && puckYSpeed < 0)
             {
+                puckSmack.Play();
+
                 puckYSpeed *= -1;
                 puck.Y = player1.Y + puck.Height;
 
@@ -672,6 +675,8 @@ namespace AirHockey
             }
             else if (player1.IntersectsWith(puck) && puckYSpeed > 0)
             {
+                puckSmack.Play();
+
                 puckYSpeed = -5;
                 //puckYSpeed *= -1;
                 //puckYSpeed = puckYSpeed + 1;
@@ -685,11 +690,15 @@ namespace AirHockey
 
             if (player2.IntersectsWith(puck) && puckYSpeed < 0)
             {
-                puckYSpeed *= -1;
+                puckSmack.Play();
+
+                puckYSpeed = 5; ;
                 puck.Y = player2.Y + puck.Height;
             }
             else if (player2.IntersectsWith(puck) && puckYSpeed > 0)
             {
+                puckSmack.Play();
+
 
                 if (upArrowcharge > 0 && upArrowcharge < 10)
                 {

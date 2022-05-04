@@ -87,5 +87,8 @@
   <ItemGroup>
     <None Include="Resources\air hockey.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\582265__rocketpancake__justa-slap-smack.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
